@@ -1,12 +1,17 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'vikki-utilities';
-
-const result = multiply(3, 7);
+import { useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Storage } from 'vikki-utilities';
 
 export default function App() {
+  useEffect(() => {
+    Storage.save('CIF_ID', '1234567890');
+  }, []);
+
+  const a = Storage.retrieve('CIF_ID');
+
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result: {a}</Text>
     </View>
   );
 }
