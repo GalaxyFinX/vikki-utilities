@@ -1,0 +1,3 @@
+export const SENTRY_EVENTS = {
+  CODEPUSH_ROLL_BACK: 'CODEPUSH_ROLL_BACK',
+};
